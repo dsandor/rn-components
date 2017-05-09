@@ -1,6 +1,6 @@
 {
   "name": "rn-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Collection of React Native components.",
   "main": "index.js",
   "scripts": {
