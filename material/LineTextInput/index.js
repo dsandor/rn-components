@@ -11,8 +11,6 @@ import {
 const width = Dimensions.get('window').width;
 
 export default class MaterialLineTextInput extends Component {
-  state: any;
-
   constructor(props) {
     super(props);
     this.state = {
