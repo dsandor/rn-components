@@ -3252,9 +3252,9 @@ rimraf@~2.2.6:
   version "2.2.8"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
 
-rn-components@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/rn-components/-/rn-components-1.0.7.tgz#a164caf514b3e7cff1f816a2ba7de9ecacdacc44"
+rn-components@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/rn-components/-/rn-components-1.0.8.tgz#5b3317db6bac53ff497087fff3efdbb2c30e5ae9"
 
 rndm@1.2.0:
   version "1.2.0"
