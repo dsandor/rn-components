@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import {
   View,
-  TouchableHighlight,
+  TouchableOpacity,
   Text,
   Modal
 } from 'react-native';
@@ -13,6 +13,54 @@ export default class MaterialModal extends Component {
     this.state = {
       modalVisible: this.props.modalVisible
     };
+
+    this.defaultModalContainerStyle = {
+      shadowRadius: 3,
+      shadowOffset: {width: 3, height: 3},
+      shadowOpacity: .5,
+      shadowColor: '#000000',
+      backgroundColor: 'white',
+      width: this.props.width || 300,
+      height: this.props.height || 120
+    };
+
+    this.defaultTitleStyle = {
+      height: 40,
+      borderBottomColor: 'black',
+      borderBottomWidth: 0,
+      justifyContent: 'center',
+      paddingLeft: 15
+    };
+
+    this.defaultTitleTextStyle = {fontSize: 20};
+
+    this.defaultContentViewStyle = {
+      flex: 1,
+      paddingLeft: 15,
+      paddingRight: 15
+    };
+
+    this.defaultButtonBarStyle = {
+      flexDirection: 'row',
+      height: 40,
+      borderTopColor: 'black',
+      borderTopWidth: 0,
+      justifyContent: 'flex-end',
+      paddingLeft: 15,
+      paddingRight: 15,
+      alignItems: 'center'
+    };
+
+    this.defaultOuterViewStyle = {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: 6
+    };
+
+    this.defaultCancelButtonStyle = { marginRight: 25 };
+
+    this.defaultOkButtonStyle = { };
   }
 
   setModalVisible(modalVisible) {
@@ -31,32 +79,35 @@ export default class MaterialModal extends Component {
         animationType={"slide"}
         transparent={true}
         visible={this.state.modalVisible}
+        style={{}}
       >
-        <View style={{flex: 1, marginTop: 22, justifyContent: 'center', alignItems: 'center'}}>
-          <View style={[{ backgroundColor: 'white', width: 300, height: 200}, this.props.modalContainerStyle]}>
-            <View style={[{ height: 40, borderBottomColor: 'black', borderBottomWidth: 3, justifyContent: 'center', paddingLeft: 15 }, this.props.titleStyle]}>
-              <Text style={this.props.titleTextStyle}>{this.props.title}</Text>
+        <View style={[this.defaultOuterViewStyle, this.props.outerViewStyle]}>
+          <View style={[this.defaultModalContainerStyle, this.props.modalContainerStyle]}>
+            <View style={[this.defaultTitleStyle, this.props.titleStyle]}>
+              <Text style={[this.defaultTitleTextStyle, this.props.titleTextStyle]}>{this.props.title}</Text>
             </View>
-            <View style={[{flex: 1, paddingLeft: 15, paddingRight: 15}, this.props.contentViewStyle]}>
+            <View style={[this.defaultContentViewStyle, this.props.contentViewStyle]}>
               { this.props.children }
             </View>
-            <View style={[{flexDirection: 'row', height: 40, borderTopColor: 'black', borderTopWidth: 3, justifyContent: 'flex-end', paddingLeft: 15, paddingRight: 15, alignItems: 'center' }, this.props.buttonBarStyle]}>
-              <TouchableHighlight onPress={() => {
+            <View style={[this.defaultButtonBarStyle, this.props.buttonBarStyle]}>
+              <TouchableOpacity onPress={() => {
                 this.setModalVisible(!this.state.modalVisible);
                 if (this.props.onClosed) {
                   this.props.onClosed({button: 'CANCEL'});
                 }
-              }} style={[{ marginRight: 25 }, this.props.cancelButtonStyle]}>
+              }}
+                                style={[this.defaultCancelButtonStyle, this.props.cancelButtonStyle]}>
                 <Text>CANCEL</Text>
-              </TouchableHighlight>
-              <TouchableHighlight onPress={() => {
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => {
                 this.setModalVisible(!this.state.modalVisible);
                 if (this.props.onClosed) {
                   this.props.onClosed({button: 'OK'});
                 }
-              }} style={this.props.okButtonStyle}>
+              }}
+                                style={[this.defaultOkButtonStyle, this.props.okButtonStyle]}>
                 <Text>OK</Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
 
           </View>
@@ -64,4 +115,7 @@ export default class MaterialModal extends Component {
       </Modal>
     );
   }
+
+
 }
+
