@@ -18,15 +18,12 @@ export default class MaterialLineTextInput extends Component {
       placeholderTextColor: props.placeholderTextColor || '#cccccc',
       lineWidth: new Animated.Value(0)
     };
-  }
 
-  componentDidMount() {
-
+    this.onChangeText = this.props.onChangeText || function() {};
   }
 
   animateOut() {
     this.refs.container.measure((fx, fy, fw, fh, px, py) => {
-      console.log('fw:', fw);
       Animated.timing(
         this.state.lineWidth,
         {
@@ -46,16 +43,17 @@ export default class MaterialLineTextInput extends Component {
 
   render() {
     return (
-      <View ref="container" style={styles.container}>
+      <View ref="container" style={[styles.container, this.props.containerStyle]}>
         <TextInput placeholder={this.state.placeholder}
                    placeholderTextColor={this.state.placeholderTextColor}
-                   style={styles.textInput}
-                   onFocus={() => this.animateOut() }
-                   onBlur={() => this.animateIn() }
+                   style={[styles.textInput, this.props.textInputStyle]}
+                   onFocus={() => this.animateOut()}
+                   onBlur={() => this.animateIn()}
+                   onChangeText={(text) => this.onChangeText(text)}
         />
-        <View style={styles.lightLine} />
+        <View style={[styles.lightLine, this.props.lightLineStyle]} />
         <Animated.View
-          style={[styles.decoratorLine, {width: this.state.lineWidth}]} />
+          style={[styles.decoratorLine, {width: this.state.lineWidth}, this.props.decoratorLineStyle]} />
       </View>
     );
   }

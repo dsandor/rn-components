@@ -29,7 +29,7 @@ export default class lineTextInput extends Component {
           Cmd+D or shake for dev menu
         </Text>
         <View style={{width: 300}}>
-          <LineTextInput placeholder="placeholder text" />
+          <LineTextInput placeholder="placeholder text" onChangeText={(text) => console.log('LineTextInput new value:', text)} />
         </View>
       </View>
     );
