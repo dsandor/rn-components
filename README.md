@@ -61,3 +61,20 @@ import LineTextInput from 'rn-components/material/LineTextInput';
 ```
 
 ![Line Text Input](https://raw.githubusercontent.com/dsandor/rn-components/master/wiki/assets/LineTextInput.gif)
+
+
+**`ShadowTextInput`**
+
+Super simple Text Input that casts a shadow.  This input is made to look similar to the search boxes that Google implements in some of it's UI.  Sure, this could just be a style.
+
+See the [Full Example](https://github.com/dsandor/rn-components/blob/master/Examples/shadowTextInput/index.ios.js) here.
+
+```JSX
+import MaterialShadowTextInput from 'rn-components/material/ShadowTextInput';
+
+<MaterialShadowTextInput 
+	placeholder="placeholder text" 
+	onChangeText={(text) => console.log('LineTextInput new value:', text)} />
+```
+
+![Shadow Text Input](https://raw.githubusercontent.com/dsandor/rn-components/master/wiki/assets/ShadowTextInput.png)
