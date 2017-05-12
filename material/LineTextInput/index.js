@@ -63,28 +63,28 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     height: 48,
-    marginTop: 20,
+    marginTop: 0,
     justifyContent: 'space-around',
 
   },
   lightLine: {
     borderBottomWidth: 1,
     borderBottomColor: '#e0e0e0',
-    marginLeft: 5,
-    marginRight: 5,
+    marginLeft: 0,
+    marginRight: 0,
   },
   textInput: {
     flex: .8,
     paddingLeft: 5,
-    marginLeft: 5,
-    marginRight: 5,
+    marginLeft: 0,
+    marginRight: 0,
     marginTop: 5,
   },
   decoratorLine: {
     backgroundColor: '#00bcd4',
     height: 2,
-    marginLeft: 5,
-    marginRight: 5,
+    marginLeft: 0,
+    marginRight: 0,
     alignSelf: 'center',
   }
 });
