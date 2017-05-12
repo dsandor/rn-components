@@ -27,3 +27,4 @@ import MaterialModal from 'rn-components/material/Modal';
 
 `LineTextInput`
 
+![Line Text Input](https://raw.githubusercontent.com/dsandor/rn-components/master/wiki/assets/LineTextInput.gif)

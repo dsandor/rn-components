@@ -20,13 +20,20 @@ export default class MaterialLineTextInput extends Component {
     };
   }
 
+  componentDidMount() {
+
+  }
+
   animateOut() {
-    Animated.timing(
-      this.state.lineWidth,
-      {
-        toValue: width - 10,
-      }
-    ).start();
+    this.refs.container.measure((fx, fy, fw, fh, px, py) => {
+      console.log('fw:', fw);
+      Animated.timing(
+        this.state.lineWidth,
+        {
+          toValue: fw - 10,
+        }
+      ).start();
+    });
   }
 
   animateIn() {
@@ -39,7 +46,7 @@ export default class MaterialLineTextInput extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View ref="container" style={styles.container}>
         <TextInput placeholder={this.state.placeholder}
                    placeholderTextColor={this.state.placeholderTextColor}
                    style={styles.textInput}
@@ -48,7 +55,7 @@ export default class MaterialLineTextInput extends Component {
         />
         <View style={styles.lightLine} />
         <Animated.View
-          style={[styles.decoratorLine, { width: this.state.lineWidth }]} />
+          style={[styles.decoratorLine, {width: this.state.lineWidth}]} />
       </View>
     );
   }
@@ -69,7 +76,7 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   textInput: {
-    flex: 1,
+    flex: .8,
     paddingLeft: 5,
     marginLeft: 5,
     marginRight: 5,
