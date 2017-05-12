@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-import {ShadowTextInput} from 'rn-components/material';
+import MaterialShadowTextInput from 'rn-components/material/ShadowTextInput';
 
 export default class shadowTextInput extends Component {
   render() {
@@ -28,7 +28,7 @@ export default class shadowTextInput extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
-        <ShadowTextInput
+        <MaterialShadowTextInput
           placeholder="search"
           containerStyle={{width: 300}}
           onChangeText={(text) => console.log('new text:', text)}
