@@ -27,7 +27,7 @@ export default class MaterialLineTextInput extends Component {
       Animated.timing(
         this.state.lineWidth,
         {
-          toValue: fw - 10,
+          toValue: fw,
         }
       ).start();
     });
