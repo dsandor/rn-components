@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/v/npm.svg?style=plastic)]()
+
 # rn-componenets
 ### A simple set of _`dependency free`_* components for React Native.
 
