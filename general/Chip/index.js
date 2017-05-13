@@ -25,7 +25,15 @@ export default class Chip extends Component {
     };
 
     this.defaultChipDeleteButtonStyle = {
-
+      position: 'absolute',
+      width: 20,
+      height: 20,
+      borderRadius: 20/2,
+      backgroundColor: 'white',
+      opacity: 0.6,
+      justifyContent: 'center',
+      alignItems: 'center',
+      right: 4
     };
 
     this.defaultChipDeleteButtonChildren = this.props.chipDeleteButtonChildren || (<Text style={{fontWeight: 'bold'}}>x</Text>);
