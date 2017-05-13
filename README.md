@@ -98,5 +98,19 @@ import FloatingActionButton from 'rn-components/material/FloatingActionButton';
 
 ![Floating Action Button](https://raw.githubusercontent.com/dsandor/rn-components/master/wiki/assets/floatingActionButton.gif)
 
+**`Chip`**
+
+Implements a `chip` that has a delete button.  Also referred to as a `tag`.
+
+See the [Full Example](https://github.com/dsandor/rn-components/blob/master/Examples/chip/index.ios.js) here.
+
+```JSX
+import Chip from 'rn-components/general/Chip';
+
+<Chip title="My Chip" containerStyle={{width: 120}} />
+```
+
+![Chip / Tag](https://raw.githubusercontent.com/dsandor/rn-components/master/wiki/assets/chip.png)
+
 
 
