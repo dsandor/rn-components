@@ -1,4 +1,5 @@
-[![npm](https://img.shields.io/npm/v/npm.svg?style=plastic)]()
+[![npm version](https://badge.fury.io/js/rn-components.svg)](https://badge.fury.io/js/rn-components)
+[![npm version](https://david-dm.org/dsandor/rn-components.svg)]()
 
 # rn-componenets
 ### A simple set of _`dependency free`_* components for React Native.
