@@ -78,3 +78,20 @@ import MaterialShadowTextInput from 'rn-components/material/ShadowTextInput';
 ```
 
 ![Shadow Text Input](https://raw.githubusercontent.com/dsandor/rn-components/master/wiki/assets/ShadowTextInput.png)
+
+**`FloatingActionButton`**
+
+Wicked simple implementation of a floating action button.  By default the button is styled to match a Material FAB and is placed in the bottom right corner of the screen. Out of the box you just need to subscribe to the `onPress` callback and optionally drop some child controls in it.  By default the child controls are centered in the middle of the circle.
+
+See the [Full Example](https://github.com/dsandor/rn-components/blob/master/Examples/floatingActionButton/index.ios.js) here.
+
+```JSX
+import FloatingActionButton from 'rn-components/material/FloatingActionButton';
+
+<FloatingActionButton onPress={() => console.log('FAB Pressed.')}/>
+```
+
+![Floating Action Button](https://raw.githubusercontent.com/dsandor/rn-components/master/wiki/assets/floatingActionButton.gif)
+
+
+
