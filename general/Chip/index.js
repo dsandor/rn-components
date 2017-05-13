@@ -33,7 +33,8 @@ export default class Chip extends Component {
       opacity: 0.6,
       justifyContent: 'center',
       alignItems: 'center',
-      right: 4
+      right: 4,
+      marginLeft: 4
     };
 
     this.defaultChipDeleteButtonChildren = this.props.chipDeleteButtonChildren || (<Text style={{fontWeight: 'bold'}}>x</Text>);
