@@ -1,6 +1,6 @@
 {
   "name": "rn-components",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Collection of React Native components.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
