@@ -1,7 +1,9 @@
 # rn-componenets
-### A simple set of components for React Native.
+### A simple set of _`dependency free`_* components for React Native.
 
 This repo is a location for my shared components that I use across my personal projects.  Some of these components are more mature than others.  I implement as many features as I need to accomplish my goals.  If there is a feature missing please feel free to submit a pull request and I will gladly merge it in.
+
+*The only dependency is `react-native`.
 
 # Install and usage
 
