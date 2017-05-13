@@ -91,21 +91,23 @@ export default class MaterialModal extends Component {
             </View>
             <View style={[this.defaultButtonBarStyle, this.props.buttonBarStyle]}>
               <TouchableOpacity onPress={() => {
-                this.setModalVisible(!this.state.modalVisible);
-                if (this.props.onClosed) {
-                  this.props.onClosed({button: 'CANCEL'});
+                    this.setModalVisible(!this.state.modalVisible);
+                    if (this.props.onClosed) {
+                      this.props.onClosed({button: 'CANCEL'});
+                    }
+                  }
                 }
-              }}
-                                style={[this.defaultCancelButtonStyle, this.props.cancelButtonStyle]}>
+                style={[this.defaultCancelButtonStyle, this.props.cancelButtonStyle]}>
                 <Text>CANCEL</Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => {
-                this.setModalVisible(!this.state.modalVisible);
-                if (this.props.onClosed) {
-                  this.props.onClosed({button: 'OK'});
+                    this.setModalVisible(!this.state.modalVisible);
+                    if (this.props.onClosed) {
+                      this.props.onClosed({button: 'OK'});
+                    }
+                  }
                 }
-              }}
-                                style={[this.defaultOkButtonStyle, this.props.okButtonStyle]}>
+                style={[this.defaultOkButtonStyle, this.props.okButtonStyle]}>
                 <Text>OK</Text>
               </TouchableOpacity>
             </View>
