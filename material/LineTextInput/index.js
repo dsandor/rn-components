@@ -3,12 +3,9 @@ import React, { Component } from 'react';
 import {
   View,
   TextInput,
-  Dimensions,
   Animated,
   StyleSheet
 } from 'react-native';
-
-const width = Dimensions.get('window').width;
 
 export default class MaterialLineTextInput extends Component {
   constructor(props) {
@@ -28,8 +25,9 @@ export default class MaterialLineTextInput extends Component {
         this.state.lineWidth,
         {
           toValue: fw,
+          duration: 250
         }
-      ).start();
+      ).start(() => this.setState({showLightLine: false}));
     });
   }
 
@@ -38,10 +36,18 @@ export default class MaterialLineTextInput extends Component {
       this.state.lineWidth,
       {
         toValue: 0,
-      }).start();
+        duration: 200
+      }).start(() => this.setState({showLightLine: true}));
   }
 
   render() {
+    let lightLine;
+    if (this.state.showLightLine) {
+      lightLine = <View style={[styles.lightLine, this.props.lightLineStyle]} />;
+    } else {
+      lightLine = <View />;
+    }
+
     return (
       <View ref="container" style={[styles.container, this.props.containerStyle]}>
         <TextInput placeholder={this.state.placeholder}
@@ -50,7 +56,9 @@ export default class MaterialLineTextInput extends Component {
                    onFocus={() => this.animateOut()}
                    onBlur={() => this.animateIn()}
                    onChangeText={(text) => this.onChangeText(text)}
+                   secureTextEntry={this.props.secureTextEntry}
         />
+        {lightLine}
         <View style={[styles.lightLine, this.props.lightLineStyle]} />
         <Animated.View
           style={[styles.decoratorLine, {width: this.state.lineWidth}, this.props.decoratorLineStyle]} />
